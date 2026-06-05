@@ -1,7 +1,9 @@
 # 🚀 CosmoDeploy
 ### Global Solution 2026.1 — Cross-Platform Application Development | FIAP
 
-![Banner do Projeto](./assets/banner.png)
+<p align="center">
+  <img src="./assets/banner.png" width="700"/>
+</p>
 
 ## Descrição
 
@@ -17,23 +19,14 @@ O CosmoDeploy é um aplicativo de monitoramento inteligente para missões espaci
 
 ## 📸 Telas do Aplicativo
 
-### Home — Dashboard Principal
-![Home](./assets/home.png)
+| Home — Dashboard Principal | Dashboard de Sensores      | Dashboard de Energia      |
+| -------------------------- | -------------------------- | ------------------------- |
+| ![](./assets/home.png)     | ![](./assets/sensores.png) | ![](./assets/energia.png) |
 
-### Dashboard de Sensores
-![Sensores](./assets/sensores.png)
+| Alertas                   | Assistente IA / Análise Preditiva | Configurações / Formulário |
+| ------------------------- | --------------------------------- | -------------------------- |
+| ![](./assets/alertas.png) | ![](./assets/ia.png)              | ![](./assets/config.png)   |
 
-### Dashboard de Energia
-![Energia](./assets/energia.png)
-
-### Alertas
-![Alertas](./assets/alertas.png)
-
-### Assistente de IA / Análise Preditiva
-![IA](./assets/ia.png)
-
-### Configurações / Formulário
-![Config](./assets/config.png)
 
 ## ⚙️ Funcionalidades
 
