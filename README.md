@@ -1,7 +1,7 @@
 # 🚀 CosmoDeploy
 ### Global Solution 2026.1 — Cross-Platform Application Development | FIAP
 
-![Banner do Projeto](banner.png)
+![Banner do Projeto](./assets/banner.png)
 
 ## Descrição
 
@@ -18,22 +18,22 @@ O CosmoDeploy é um aplicativo de monitoramento inteligente para missões espaci
 ## 📸 Telas do Aplicativo
 
 ### Home — Dashboard Principal
-![Home](home.png)
+![Home](./assets/home.png)
 
 ### Dashboard de Sensores
-![Sensores](sensores.png)
+![Sensores](./assets/sensores.png)
 
 ### Dashboard de Energia
-![Energia](energia.png)
-
-### Dashboard de Comunicação
-![Comunicação](comunicacao.png)
+![Energia](./assets/energia.png)
 
 ### Alertas
-![Alertas](alertas.png)
+![Alertas](./assets/alertas.png)
+
+### Assistente de IA / Análise Preditiva
+![IA](./assets/ia.png)
 
 ### Configurações / Formulário
-![Config](./assets/screenshots/configuracoes.png)
+![Config](./assets/config.png)
 
 ## ⚙️ Funcionalidades
 
@@ -63,7 +63,7 @@ O CosmoDeploy é um aplicativo de monitoramento inteligente para missões espaci
 ### Instalação
 ```bash
 git clone https://github.com/GuilhermeTamai/GS1---CPAD.git
-cd seu-repo
+cd GS1---CPAD
 npm install
 npx expo start
 ```
