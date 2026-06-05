@@ -1,4 +1,4 @@
-# 🚀 Nome do Projeto
+# 🚀 CosmoDeploy
 ### Global Solution 2026.1 — Cross-Platform Application Development | FIAP
 
 ![Banner do Projeto](banner.png)
@@ -61,11 +61,12 @@ O CosmoDeploy é um aplicativo de monitoramento inteligente para missões espaci
 - Expo Go instalado no celular (iOS ou Android)  
 
 ### Instalação
+```bash
 git clone https://github.com/GuilhermeTamai/GS1---CPAD.git
 cd seu-repo
 npm install
 npx expo start
-
+```
 ## 🎥 Vídeo de Demonstração
 
 [![Assista ao vídeo](./assets/screenshots/thumb.png)](https://youtube.com/...)
