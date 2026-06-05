@@ -19,16 +19,51 @@ O CosmoDeploy é um aplicativo de monitoramento inteligente para missões espaci
 
 ## 📸 Telas do Aplicativo
 
-| Home — Dashboard Principal | Dashboard de Sensores      | Dashboard de Energia      |
-| -------------------------- | -------------------------- | ------------------------- |
-| ![](./assets/home.png)     | ![](./assets/sensores.png) | ![](./assets/energia.png) |
+### Home — Dashboard Principal
 
-| Alertas                   | Assistente IA / Análise Preditiva | Configurações / Formulário |
-| ------------------------- | --------------------------------- | -------------------------- |
-| ![](./assets/alertas.png) | ![](./assets/ia.png)              | ![](./assets/config.png)   |
+![Home](./assets/screenshots/home.png)
 
+Visão geral da missão espacial contendo indicadores gerais de saúde da base, recursos críticos, temperatura, pressão, comunicação e monitoramento dos principais sistemas em tempo real.
 
-## ⚙️ Funcionalidades
+---
+
+### Dashboard de Sensores
+
+![Sensores](./assets/screenshots/sensores.png)
+
+Tela dedicada à análise dos sensores da missão, apresentando gráficos dinâmicos, histórico de leituras simuladas e monitoramento contínuo dos sistemas críticos.
+
+---
+
+### Dashboard de Energia
+
+![Energia](./assets/screenshots/energia.png)
+
+Dashboard responsável pelo acompanhamento energético da missão, exibindo geração dos painéis solares, consumo dos sistemas, balanço energético e distribuição de recursos.
+
+---
+
+### Alertas
+
+![Alertas](./assets/screenshots/alertas.png)
+
+Central de alertas automáticos gerados a partir dos limiares configurados, exibindo criticidade, histórico de eventos e monitoramento contínuo dos recursos.
+
+---
+
+### Assistente IA / Análise Preditiva
+
+![IA](./assets/screenshots/ia.png)
+
+Módulo de inteligência artificial responsável por fornecer análises preditivas, recomendações operacionais e suporte à tomada de decisão durante a missão.
+
+---
+
+### Configurações / Formulário
+
+![Config](./assets/screenshots/config.png)
+
+Tela utilizada para configuração da missão, personalização dos limiares críticos, preferências operacionais e gerenciamento das informações da base espacial.
 
 ## ⚙️ Funcionalidades
 
