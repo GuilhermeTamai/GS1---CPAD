@@ -81,26 +81,50 @@ Tela utilizada para configuração da missão, personalização dos limiares cr�
 
 ## 🛠️ Tecnologias
 
-- React Native + Expo  
-- Expo Router  
-- AsyncStorage  
-- Context API  
-- TypeScript  
-
+- React Native
+- Expo
+- TypeScript
+- Expo Router
+- Context API
+- AsyncStorage
+- React Native SVG
+- React Native Chart Kit
+- React Hooks
+- Expo Notifications
+- React Native Reanimated
+  
 ## ▶️ Como Executar
 
 ### Pré-requisitos
-- Node.js instalado  
-- Expo CLI: `npm install -g expo-cli`  
-- Expo Go instalado no celular (iOS ou Android)  
+
+- Node.js instalado
+- Git instalado
+- Expo Go instalado no celular (iOS ou Android)
 
 ### Instalação
+
 ```bash
+# Clonar o repositório
 git clone https://github.com/GuilhermeTamai/GS1---CPAD.git
+
+# Entrar na pasta do projeto
 cd GS1---CPAD
+
+# Instalar dependências
 npm install
+
+# Executar projeto
 npx expo start
 ```
+
+### Executando o aplicativo
+
+Após iniciar o Expo:
+
+- Pressione `a` para abrir no Android Emulator
+- Pressione `i` para abrir no iOS Simulator (macOS)
+- Ou escaneie o QR Code usando o aplicativo Expo Go no celular
+
 ## 🎥 Vídeo de Demonstração
 
 [![Assista ao vídeo](./assets/screenshots/thumb.png)](https://youtube.com/...)
