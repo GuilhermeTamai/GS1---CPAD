@@ -7,7 +7,7 @@
 
 ## Descrição
 
-O CosmoDeploy é um aplicativo de monitoramento inteligente para missões espaciais, desenvolvido para acompanhar recursos críticos como oxigênio, água, energia e comunicação em tempo real. A solução busca resolver desafios de gestão e tomada de decisão dentro do contexto de Space Predictive Analytics, utilizando análise preditiva, dashboards interativos e geração automática de alertas. O diferencial do grupo está na combinação entre visualização em tempo real, simulação dinâmica de sensores e suporte de IA para antecipação de riscos e otimização operacional.
+O CosmoDeploy é um aplicativo de monitoramento inteligente para missões espaciais, desenvolvido para acompanhar recursos críticos da missão, como oxigênio, água, energia, temperatura e comunicação em tempo real. A solução busca auxiliar a tomada de decisão dentro do contexto de Space Predictive Analytics, utilizando dashboards interativos, análise preditiva e geração automática de alertas. Seu diferencial está na combinação entre simulação dinâmica de sensores, monitoramento visual dos sistemas da missão e suporte de IA para antecipação de riscos e otimização operacional.
 
 ## 🧑‍💻 Equipe
 
@@ -30,13 +30,19 @@ O CosmoDeploy é um aplicativo de monitoramento inteligente para missões espaci
 
 ## ⚙️ Funcionalidades
 
-- [x] Dashboard com indicadores em tempo real (simulado)  
-- [x] Sistema de alertas automáticos por limiar crítico  
-- [x] Persistência de configurações com AsyncStorage  
-- [x] Navegação com Expo Router (Tabs + Stack)  
-- [x] Context API para estado global da missão  
-- [x] Formulário de configuração com validação  
-- [ ] Integração com NASA Open API (bônus)  
+## ⚙️ Funcionalidades
+
+* [x] Dashboard principal com monitoramento em tempo real (simulado)
+* [x] Simulação dinâmica de sensores espaciais e telemetria
+* [x] Sistema automático de alertas baseado em limiares configuráveis
+* [x] Dashboard dedicado para análise energética da missão
+* [x] Visualização gráfica da evolução dos recursos e sensores
+* [x] Assistente de IA para análise preditiva e recomendações operacionais
+* [x] Configuração personalizada da missão e dos limites críticos
+* [x] Context API para gerenciamento global do estado da missão
+* [x] Navegação multi-telas utilizando Expo Router
+* [x] Persistência local de configurações com AsyncStorage
+* [ ] Integração com NASA Open API (bônus)
 
 ## 🛠️ Tecnologias
 
