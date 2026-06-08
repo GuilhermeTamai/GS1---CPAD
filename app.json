@@ -3,42 +3,55 @@
     "name": "CosmoDeploy",
     "slug": "cosmo-deploy",
     "version": "1.0.0",
+
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+
+    "icon": "./assets/banner.png",
+
     "scheme": "cosmodeploy",
+
     "userInterfaceStyle": "dark",
+
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/banner.png",
       "resizeMode": "contain",
       "backgroundColor": "#0a0c14"
     },
+
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.fiap.cosmodeploy"
     },
+
     "android": {
+      "package": "com.fiap.cosmodeploy",
+
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/banner.png",
         "backgroundColor": "#0a0c14"
-      },
-      "package": "com.fiap.cosmodeploy"
+      }
     },
+
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/favicon.png"
+
+      "favicon": "./assets/banner.png"
     },
+
     "plugins": [
       "expo-router",
       "expo-font",
+
       [
         "expo-notifications",
         {
-          "icon": "./assets/notification-icon.png",
+          "icon": "./assets/banner.png",
           "color": "#4c8ef5"
         }
       ]
     ],
+
     "experiments": {
       "typedRoutes": true
     }
