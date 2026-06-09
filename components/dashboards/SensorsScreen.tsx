@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     alignItems:      'center',
   },
   sensorLeft:  { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  sensorLabel: { fontSize: 13 },
+  sensorLabel: { fontSize: 13, color: Colors.text, },
   sensorRight: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   sensorValue: { fontSize: 14, fontWeight: '700' },
 });

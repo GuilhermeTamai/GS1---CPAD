@@ -30,6 +30,7 @@ export function ResourceCard({
         padding:         12,
         borderWidth:     1,
         borderColor:     isAlert ? color + '44' : Colors.border,
+        overflow: 'hidden',
       }}
     >
       {/* Cabeçalho */}
@@ -87,7 +88,7 @@ function Sparkline({ data, color }: SparklineProps) {
     })
     .join(' ');
 
-  const lastX = W;
+  const lastX = W - 4;
   const lastY = H - ((data[data.length - 1] - min) / range) * (H - 4) - 2;
 
   return (

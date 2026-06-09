@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize:      11,
     fontWeight:    '700',
-    color:         Colors.textDim,
+    color:         Colors.text,
     letterSpacing: 1.2,
     marginBottom:  10,
     marginTop:     4,
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     marginBottom:    16,
   },
   balanceRow:  { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  balanceLabel: { fontSize: 13 },
+  balanceLabel: { fontSize: 13, color: Colors.text, },
   balanceValue: { fontSize: 20, fontWeight: '700' },
   balanceSub:   { fontSize: 11, color: Colors.textMuted, marginTop: 4 },
 
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     justifyContent:  'space-between',
     alignItems:      'center',
   },
-  panelName:   { fontSize: 13, fontWeight: '600' },
+  panelName:   { fontSize: 13, fontWeight: '600', color: Colors.text, },
   panelHealth: { fontSize: 11, color: Colors.textMuted, marginTop: 2 },
   panelOutput: { fontSize: 14, fontWeight: '700' },
 
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
   },
   consumerLeft:  { flexDirection: 'row', alignItems: 'center', gap: 8 },
   consumerRight: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  consumerName:  { fontSize: 13 },
-  consumerValue: { fontSize: 13, fontWeight: '600', minWidth: 60, textAlign: 'right' },
+  consumerName:  { fontSize: 13,  color: Colors.text, },
+  consumerValue: { fontSize: 13, fontWeight: '600', minWidth: 60, textAlign: 'right', color: Colors.text, },
   dot:           { width: 6, height: 6, borderRadius: 3 },
 });

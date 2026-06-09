@@ -64,6 +64,7 @@ export interface HistoryPoint {
   oxygen: number;
   energy: number;
   water: number;
+  food: number;
   signal: number;
 }
 

@@ -23,7 +23,6 @@ const SUGGESTIONS = [
 ];
 
 /**
- * Tela de IA — integração com Claude (IA Generativa) para análise preditiva.
  * Diferencial bônus: Interpretação inteligente dos dados da missão.
  */
 export default function AIScreen({ data }: AIScreenProps) {
@@ -34,52 +33,155 @@ export default function AIScreen({ data }: AIScreenProps) {
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
   const [error,       setError]       = useState<string | null>(null);
 
-  const runAnalysis = async (customQuery?: string) => {
-    const q = (customQuery ?? query).trim();
-    if (!q) return;
+const runAnalysis = async (customQuery?: string) => {
+  const q = (customQuery ?? query).trim();
 
-    setLoading(true);
-    setError(null);
+  if (!q) return;
 
-    const systemPrompt = `Você é COSMOS-AI, assistente de missão espacial avançado para a plataforma CosmoDeploy.
-Responda sempre em português brasileiro. Seja direto e técnico. Use emojis relevantes. Formate em tópicos curtos.
+  setLoading(true);
+  setError(null);
 
-Missão: ${state.name} | Local: ${state.location} | Tripulação: ${state.crew} pessoas | Dia: ${state.daysMission}
+  try {
+    await new Promise(resolve => setTimeout(resolve, 1200));
 
-Dados atuais dos sensores:
-- Oxigênio: ${data.oxygen.level.toFixed(1)}% (limiar: ${state.alertThresholds.oxygen}%)
-- Água: ${data.water.level.toFixed(1)}% (limiar: ${state.alertThresholds.water}%)
-- Energia: ${data.energy.level.toFixed(1)}% (limiar: ${state.alertThresholds.energy}%)
-- Alimento: ${data.food.level.toFixed(1)}% (limiar: ${state.alertThresholds.food}%)
-- Temperatura interna: ${data.temperature.internal.toFixed(1)}°C
-- Pressão: ${data.pressure.level.toFixed(1)} kPa
-- Sinal: ${data.signal.strength.toFixed(0)}% | Latência: ${data.signal.latency.toFixed(0)}ms
-- Estabilidade orbital: ${data.orbital.stability.toFixed(1)}%`;
+    const alerts: string[] = [];
 
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({
-          model:      'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system:     systemPrompt,
-          messages:   [{ role: 'user', content: q }],
-        }),
-      });
+    if (data.oxygen.level < state.alertThresholds.oxygen)
+      alerts.push('🫁 Oxigênio abaixo do limite.');
 
-      const json = await res.json();
-      const text = json.content?.map((c: { text?: string }) => c.text ?? '').join('') ?? 'Sem resposta';
+    if (data.water.level < state.alertThresholds.water)
+      alerts.push('💧 Reservas de água críticas.');
 
-      setChatHistory((h) => [...h, { query: q, response: text }]);
-      setAnalysis(text);
-    } catch (e) {
-      setError('Erro ao conectar com COSMOS-AI. Verifique a conexão.');
-    } finally {
-      setLoading(false);
-      setQuery('');
+    if (data.energy.level < state.alertThresholds.energy)
+      alerts.push('⚡ Energia abaixo do recomendado.');
+
+    if (data.food.level < state.alertThresholds.food)
+      alerts.push('🍽️ Estoque de alimentos reduzido.');
+
+    if (data.signal.strength < 40)
+      alerts.push('📡 Comunicação instável.');
+
+    if (data.orbital.stability < 70)
+      alerts.push('🛰️ Estabilidade orbital comprometida.');
+
+    const question = q.toLowerCase();
+
+    let response = `🚀 RELATÓRIO COSMOS-AI
+
+Pergunta: ${q}
+
+`;
+
+    if (alerts.length > 0) {
+      response += '⚠️ ALERTAS DETECTADOS\n\n';
+      response += alerts.join('\n');
+      response += '\n\n';
+    } else {
+      response += '✅ Todos os sistemas estão operando normalmente.\n\n';
     }
-  };
+
+    if (
+      question.includes('estado') ||
+      question.includes('missão')
+    ) {
+      response +=
+        '📊 STATUS GERAL DA MISSÃO\n\n' +
+        `🫁 Oxigênio: ${data.oxygen.level.toFixed(1)}%\n` +
+        `💧 Água: ${data.water.level.toFixed(1)}%\n` +
+        `⚡ Energia: ${data.energy.level.toFixed(1)}%\n` +
+        `🍽️ Alimento: ${data.food.level.toFixed(1)}%\n` +
+        `🛰️ Estabilidade Orbital: ${data.orbital.stability.toFixed(1)}%\n\n` +
+        'Recomendação: manter monitoramento contínuo.';
+    }
+
+    else if (
+      question.includes('risco') ||
+      question.includes('24h')
+    ) {
+      response += '🔮 PREVISÃO PARA AS PRÓXIMAS 24 HORAS\n\n';
+
+      if (data.energy.level < 40)
+        response += '⚠️ Possível escassez energética.\n';
+
+      if (data.water.level < 40)
+        response += '⚠️ Reservas de água exigem atenção.\n';
+
+      if (data.signal.strength < 50)
+        response += '⚠️ Comunicação pode sofrer degradação.\n';
+
+      if (data.orbital.stability < 75)
+        response += '⚠️ Correções orbitais podem ser necessárias.\n';
+
+      response +=
+        '\n📋 Recomenda-se monitoramento reforçado dos sistemas críticos.';
+    }
+
+    else if (
+      question.includes('energia') ||
+      question.includes('consumo')
+    ) {
+      response +=
+        '⚡ OTIMIZAÇÃO DE ENERGIA\n\n' +
+        '• Desativar módulos não essenciais.\n' +
+        '• Reduzir transmissões secundárias.\n' +
+        '• Priorizar sistemas de suporte à vida.\n' +
+        '• Monitorar bancos de bateria.\n\n';
+
+      if (data.energy.level < 50) {
+        response +=
+          '⚠️ O nível atual de energia exige medidas de economia.';
+      } else {
+        response +=
+          '✅ O nível energético atual é considerado seguro.';
+      }
+    }
+
+    else if (
+      question.includes('recurso') ||
+      question.includes('crítico')
+    ) {
+      const resources = [
+        { name: 'Oxigênio', value: data.oxygen.level },
+        { name: 'Água', value: data.water.level },
+        { name: 'Energia', value: data.energy.level },
+        { name: 'Alimento', value: data.food.level },
+      ];
+
+      resources.sort((a, b) => a.value - b.value);
+
+      response +=
+        '📉 RECURSO MAIS CRÍTICO\n\n' +
+        `${resources[0].name}: ${resources[0].value.toFixed(1)}%\n\n` +
+        'Recomendação: priorizar este recurso nas próximas operações.';
+    }
+
+    else {
+      response +=
+        '🤖 Análise concluída.\n\n' +
+        `🫁 Oxigênio: ${data.oxygen.level.toFixed(1)}%\n` +
+        `💧 Água: ${data.water.level.toFixed(1)}%\n` +
+        `⚡ Energia: ${data.energy.level.toFixed(1)}%\n` +
+        `🍽️ Alimento: ${data.food.level.toFixed(1)}%\n` +
+        `🛰️ Estabilidade Orbital: ${data.orbital.stability.toFixed(1)}%\n\n` +
+        'Todos os dados da missão foram processados com sucesso.';
+    }
+
+    setAnalysis(response);
+
+    setChatHistory(prev => [
+      ...prev,
+      {
+        query: q,
+        response,
+      },
+    ]);
+  } catch {
+    setError('Falha ao analisar os dados da missão.');
+  } finally {
+    setLoading(false);
+    setQuery('');
+  }
+};
 
   return (
     <ScrollView
@@ -92,7 +194,7 @@ Dados atuais dos sensores:
         <Text style={{ fontSize: 28 }}>🤖</Text>
         <View>
           <Text style={styles.aiName}>COSMOS-AI</Text>
-          <Text style={styles.aiSub}>Assistente de Análise Preditiva · Powered by Claude</Text>
+          <Text style={styles.aiSub}>Assistente Inteligente de Missão Espacial</Text>
         </View>
       </View>
 

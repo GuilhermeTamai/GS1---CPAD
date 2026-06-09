@@ -97,8 +97,8 @@ export default function HomeScreen({ data, history }: HomeScreenProps) {
       <Text style={styles.sectionTitle}>RECURSOS DA BASE</Text>
       <View style={styles.resourceGrid}>
         {resources.map((r) => {
-          const histKey = r.key as 'oxygen' | 'energy' | 'water';
-          const hist = ['oxygen', 'energy', 'water'].includes(r.key)
+          const histKey = r.key as 'oxygen' | 'energy' | 'water' | 'food';
+          const hist = ['oxygen', 'energy', 'water', 'food'].includes(r.key)
             ? history.map((h) => h[histKey])
             : undefined;
           return (

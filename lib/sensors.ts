@@ -46,6 +46,7 @@ export function useSensorHistory(tick: number): HistoryPoint[] {
       oxygen: 65 + Math.sin(i * 0.5) * 10 + Math.random() * 5,
       energy: 70 + Math.cos(i * 0.4) * 12 + Math.random() * 5,
       water:  48 - i * 0.3 + Math.random() * 4,
+      food:   55 - i * 0.2 + Math.random() * 3,
       signal: 80 + Math.sin(i * 0.7) * 15 + Math.random() * 5,
     }))
   );
@@ -60,6 +61,7 @@ export function useSensorHistory(tick: number): HistoryPoint[] {
           oxygen: rand(68, 8),
           energy: rand(72, 12),
           water:  rand(45, 10),
+          food:   rand(55, 8),
           signal: rand(82, 15),
         },
       ].slice(-20);
