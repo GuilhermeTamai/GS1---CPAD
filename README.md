@@ -127,10 +127,7 @@ Após iniciar o Expo:
 
 ## 🎥 Vídeo de Demonstração
 
-[![Assista ao vídeo](./assets/screenshots/thumb.png)](https://youtube.com/...)
-
-Ou simplesmente:  
-[Clique aqui para assistir à demonstração](https://youtube.com/...)
+[Clique aqui para assistir à demonstração](https://youtube.com/shorts/AfjfATp7jqs)
 
 ## 📜 Licença
 
